@@ -7,7 +7,7 @@ import lxml.html
 # # Read in a page
 html = scraperwiki.scrape("https://uk.soccerway.com/teams/england/chelsea-football-club/661/")
 #create an empty dictionary variable to hold our data later
-record {}
+record = {}
 root = lxml.html.fromstring(html)
 names = root.cssselect("td div a")
 for name in names:
