@@ -9,12 +9,12 @@ html = scraperwiki.scrape("https://uk.soccerway.com/teams/england/chelsea-footba
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-root.cssselect("td div a")
+names = root.cssselect("td div a")
 for name in names:
   print name.text
   print name.attrib['href']
-  record['link'] = name.attrib['href']
-  scraperwiki.sqlite.save(unique_keys=['link'] data=record]
+  #record['link'] = name.attrib['href']
+  #scraperwiki.sqlite.save(unique_keys=['link'] data=record]
   
 #
 # # Write out to the sqlite database using scraperwiki library
